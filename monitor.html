@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Filmezine - Monitor</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+	
+	<header>
+		<h1>Filmezine</h1>
+	</header>
+	<main class="bloco-central">
+		<p id="load">Status: pronto.</p>
+		<table class="tabela">
+			<thead>
+				<tr>
+					<th>Id</th>
+					<th>Evento</th>
+					<th>Conteudo</th>
+					<th>Usuario</th>
+					<th>Data/Hora</th>
+				</tr>
+			</thead>
+			<tbody>
+				
+			</tbody>
+		</table>
+	</main>
+
+	<script>
+
+		var qtdeLinhas = 0;
+
+		function carregando(sim) {
+			var p = document.querySelector('#load');
+			p.textContent = sim ? 'Status: carregando...' : 'Status: pronto.';
+		}
+
+		function buscar() {
+
+			carregando(true);
+
+			var xhr = new XMLHttpRequest();
+
+			xhr.addEventListener('load', function(e) {
+
+				console.log(xhr);
+				if (xhr.status === 200) {
+
+					var dados = JSON.parse(xhr.responseText);
+					atualizarTabela(dados);
+
+				} else {
+					console.log('ocorreu um erro ' + xhr.status);
+				}
+
+			});
+
+			xhr.addEventListener('loadend', function(e) {
+				carregando(false);
+			});
+
+			xhr.open('GET', 'monitor.php');
+			xhr.send();
+		}
+
+		function atualizarTabela(dados) {
+			var tbody = document.querySelector('tbody');
+			for (var i = qtdeLinhas; i < dados.length; i++) {
+
+				var tr = document.createElement('tr');
+				var td = document.createElement('td');
+
+				td.textContent = dados[i].id;
+				tr.appendChild(td);
+
+				td = document.createElement('td');
+				td.textContent = dados[i].evento;
+				tr.appendChild(td);
+
+				td = document.createElement('td');
+				td.textContent = dados[i].id_conteudo;
+				tr.appendChild(td);
+
+				td = document.createElement('td');
+				td.textContent = dados[i].id_usuario;
+				tr.appendChild(td);
+
+				td = document.createElement('td');
+				td.textContent = dados[i].datahora;
+				tr.appendChild(td);
+
+				tbody.appendChild(tr);
+			}
+			qtdeLinhas = dados.length;
+		}
+
+		var timer = setTimeout(function tick() {
+			buscar();
+			timer = setTimeout(tick, 2000);
+		}, 2000);
+	</script>
+
+</body>
+</html>

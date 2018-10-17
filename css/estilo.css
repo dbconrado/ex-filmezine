@@ -1,0 +1,119 @@
+* {
+	box-sizing: border-box;
+}
+
+html {
+	font-family: 'Open Sans', 'Arial', sans-serif;
+}
+
+html, body {
+	margin: 0;
+	padding: 0;
+}
+
+header {
+	width: 100%;
+	background-color: #d33d3d;
+	color: #fff;
+}
+
+h1 {
+	padding-top: 20px;
+	padding-bottom: 20px;
+	margin: 0;
+	text-align: center;
+}
+
+#container-filme {
+	display: flex;
+}
+
+#container-filme aside {
+	flex: 1;
+	background-color: #b2b2b2;
+	padding:10px;
+}
+
+#container-filme article {
+	flex: 4;
+	padding: 10px;
+}
+
+#container-filme #filmes {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	justify-content: flex-start;
+}
+
+#container-filme .filme {
+	flex: 0 0 222px;
+	margin-right: 5px;
+	width: 222px;
+}
+#container-filme .filme h2 {
+	font-size: 80%;
+}
+
+#container-filme .menu {
+	list-style-type: none;
+}
+
+.form-empilhado label, .form-empilhado input {
+	display: block;
+	width: 100%;
+	margin-top: 10px;
+}
+
+.form-empilhado input {
+	height: 28px;
+}
+
+.form-empilhado button {
+	height: 28px;
+	margin-top: 10px;
+}
+
+.bloco-central {
+	width: 90%;
+	max-width: 800px;
+	margin: 0 auto;
+}
+
+.bloco-pequeno {
+	width: 90%;
+	max-width: 450px;
+	margin: 0 auto;
+}
+
+.mensagem {
+	color: #ff0000;
+}
+
+.tabela {
+	border: 1px solid #cbcbcb;
+	border-collapse: collapse;
+	border-spacing: 0;
+	line-height: 1.6;
+}
+
+.tabela thead {
+	background-color: #e0e0e0;
+	color: #000;
+	text-align: left;
+	vertical-align: bottom;
+}
+
+.tabela th, td {
+	border-left: 1px solid #cbcbcb;
+	border-width: 0 0 0 1px;
+	padding: 0.5em 1em;
+}
+
+.tabela td {
+	background-color: transparent;
+}
+
+#detalhes-filme {
+	margin-top: 30px;
+}
