@@ -49,6 +49,9 @@ if (isset($_GET['genero'])) {
 	<main id="container-filme">
 		<aside>
 			<h2>Gêneros</h2>
+			<p> 
+				Emanuelle passou por aqui. 
+			</p>
 			<ul class="menu generos">
 				<?php foreach ($generos as $genero): ?>
 				<li>
