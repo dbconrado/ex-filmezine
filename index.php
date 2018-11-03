@@ -49,9 +49,6 @@ if (isset($_GET['genero'])) {
 	<main id="container-filme">
 		<aside>
 			<h2>Gêneros</h2>
-			<p> 
-				Emanuelle passou por aqui. 
-			</p>
 			<ul class="menu generos">
 				<?php foreach ($generos as $genero): ?>
 				<li>
@@ -70,7 +67,10 @@ if (isset($_GET['genero'])) {
 			<h2><?= $filtro ?></h2>
 			<div id="filmes">
 				<?php foreach ($filmes as $filme): ?>
-				<a href="filme.php?id=<?= $filme['id'] ?>">
+				<a href="filme.php?id=<?= $filme['id'] ?>"
+					data-usuario="<?= $usuario['id']?>"
+					data-conteudo="<?= $filme['id']?>"
+					onclick="viuFilme(this)">
 					<div class="filme">
 						<img src="https://placehold.it/150x222" alt="<?= $filme['nome']?>">
 						<h2><?= $filme['nome']?></h2>
@@ -85,5 +85,6 @@ if (isset($_GET['genero'])) {
 	<script src="scripts/ajax.js"></script>
 	<script src="scripts/coletor.js"></script>
 	<script src="scripts/vinculacoes.js"></script>
+	<script src="scripts/filme.js"></script>
 </body>
 </html>

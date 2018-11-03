@@ -38,3 +38,5 @@ class Login {
 		return $_SESSION['usuario'];
 	}
 }
+
+?>
