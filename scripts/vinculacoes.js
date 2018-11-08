@@ -15,7 +15,7 @@ function viuGenero(elemento) {
 	var id_usuario = elemento.dataset.usuario;
 	var id_conteudo = elemento.dataset.conteudo;
 
-	coletar(id_usuario, id_conteudo, 'viuGenero', function(e) {
+	coletar(id_usuario, id_conteudo, 'viuGenero', id_sessao, function(e) {
 		/* navega até o endereço do link */
 		window.location = elemento.getAttribute('href');
 	});
