@@ -24,7 +24,8 @@ $id_usuario = $_POST['id_usuario'];
 $banco->insertInto('evidencia', [
 	'evento' => $evento,
 	'id_conteudo' => $id_conteudo,
-	'id_usuario' => $id_usuario
+	'id_usuario' => $id_usuario,
+	'id_sessao' => $login->getIdSessao()
 ]);
 
 http_response_code(200);
