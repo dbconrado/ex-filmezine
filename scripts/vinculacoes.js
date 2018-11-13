@@ -11,6 +11,7 @@ clicar em um link de gênero.
 
 O parâmetro 'elemento' é o link clicado.
 */
+
 function viuGenero(elemento) {
 	var id_usuario = elemento.dataset.usuario;
 	var id_conteudo = elemento.dataset.conteudo;
@@ -20,3 +21,4 @@ function viuGenero(elemento) {
 		window.location = elemento.getAttribute('href');
 	});
 }
+

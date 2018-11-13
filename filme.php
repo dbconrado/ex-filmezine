@@ -18,6 +18,7 @@ if (!isset($_GET['id'])) {
 }
 
 $filme = $banco->selectWhere('filme', [ 'id' => $_GET['id'] ])[0];
+$usuario = $login->getUsuario();
 
 ?>
 <!DOCTYPE html>
@@ -34,7 +35,8 @@ $filme = $banco->selectWhere('filme', [ 'id' => $_GET['id'] ])[0];
 	</header>
 	<main class="bloco-central">
 		
-		<div id="detalhes-filme">
+		<div id="detalhes-filme" onscroll="<?php $banco->insertInto('evidencia', ['evento' => 'scrollPage',
+			'id_conteudo' => $filme['id'], 'id_usuario' => $usuario['id']]); ?>" >
 
 			<div>
 				<img src="http://placehold.it/300x400" alt="">
