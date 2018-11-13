@@ -43,12 +43,15 @@ if (isset($_GET['genero'])) {
 <body>
 	
 	<header>
-		<h1>Filmezine</h1>
+		<h1><a href="index.php" class="link_marca">Filmezine</a></h1>
 	</header>
 
 	<main id="container-filme">
 		<aside>
 			<h2>Gêneros</h2>
+			<p> 
+				Emanuelle passou por aqui. 
+			</p>
 			<ul class="menu generos">
 				<?php foreach ($generos as $genero): ?>
 				<li>

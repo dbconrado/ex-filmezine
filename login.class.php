@@ -19,7 +19,7 @@ class Login {
 			return false;
 		} else {
 
-			$_SESSION['usuario'] = $resultado[0];			
+			$_SESSION['usuario'] = $resultado[0];
 			return true;
 		}
 	}
@@ -36,5 +36,12 @@ class Login {
 
 	function getUsuario() {
 		return $_SESSION['usuario'];
+	}
+
+	function getIdSessao() {
+		if (!isset($_SESSION['id_sessao']))
+			$_SESSION['id_sessao'] = uniqid(); // gera um identificador unico para a sessão
+		
+		return $_SESSION['id_sessao'];
 	}
 }
